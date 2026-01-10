@@ -1,0 +1,10 @@
+all: _output/report.pdf
+
+_output/report.pdf: report.qmd _quarto.yml bib/cite.bib
+	quarto render
+
+clean:
+	rm -rf _output
+
+cleanall: clean
+	rm -rf .quarto
